@@ -66,4 +66,4 @@
   - **Plano de Dados**;
     - Pedacinhos de *middleware* entre os diversos pontos. Apenas sabem otimizar o *I/O*, mas não querem saber do trabalho dos outros pontos.
   - **Plano de Controlo**.
-    - Cérebro do armazenamento. COntrola a infraestrutura de armazenamento e tem em atenção a sua estrutura, o que permite que tome decisões acerca do que cada *stage* (do plano de dados) deverá fazer.
+    - Cérebro do armazenamento. Controla a infraestrutura de armazenamento e tem em atenção a sua estrutura, o que permite que tome decisões acerca do que cada *stage* (do plano de dados) deverá fazer.

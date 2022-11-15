@@ -3,7 +3,7 @@
 ## Monitorização
 
 - O monitor é algo que observa a atividade do sistema.
-  - O sistema é algo genérico, ou sseja, poderá ser 1 CPU, 1 computador, um conjunto de servidores, etc...
+  - O sistema é algo genérico, ou seja, poderá ser 1 CPU, 1 computador, um conjunto de servidores, etc...
 
 ### Conceitos
 
