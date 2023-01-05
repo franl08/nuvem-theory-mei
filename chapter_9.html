@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html lang="pt" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Teórica 09 - Teóricas de ASCN</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Teórica 01</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Teórica 02</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> Teórica 03</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> Teórica 04</a></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">5.</strong> Teórica 05</a></li><li class="chapter-item expanded "><a href="chapter_6.html"><strong aria-hidden="true">6.</strong> Teórica 06</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">7.</strong> Teórica 07</a></li><li class="chapter-item expanded "><a href="chapter_8.html"><strong aria-hidden="true">8.</strong> Teórica 08</a></li><li class="chapter-item expanded "><a href="chapter_9.html" class="active"><strong aria-hidden="true">9.</strong> Teórica 09</a></li><li class="chapter-item expanded "><a href="chapter_10.html"><strong aria-hidden="true">10.</strong> Teórica 10</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Teóricas de ASCN</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="teórica-09"><a class="header" href="#teórica-09">Teórica 09</a></h1>
+<h2 id="monitorização"><a class="header" href="#monitorização">Monitorização</a></h2>
+<ul>
+<li>O monitor é algo que observa a atividade do sistema.
+<ul>
+<li>O sistema é algo genérico, ou seja, poderá ser 1 CPU, 1 computador, um conjunto de servidores, etc...</li>
+</ul>
+</li>
+</ul>
+<h3 id="conceitos"><a class="header" href="#conceitos">Conceitos</a></h3>
+<ul>
+<li>
+<p>Um sistema é constituído por:</p>
+<ul>
+<li><em>Hardware</em>;</li>
+<li>Lógica (programas).</li>
+</ul>
+</li>
+<li>
+<p>Estes têm estado!</p>
+<ul>
+<li>O estado muda com <strong>eventos</strong>!
+<ul>
+<li>Um evento é uma unidade de monitorização, ou seja, será o nosso objeto de monitorização que será registado em <em>traces</em>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Um <em>trace</em> é um <em>log</em> de eventos.</p>
+<ul>
+<li>Contém <em>timestamps</em>, detalhes de variáveis, etc...</li>
+</ul>
+</li>
+<li>
+<p><strong>Domínio</strong>: exatamente aquilo que queremos observar (métricas que pretendemos estudar);</p>
+<ul>
+<li>Muitas vezes, o domínio é definido numa abordagem semelhante a tentativa-erro.</li>
+</ul>
+</li>
+<li>
+<p><strong>Detalhe</strong>: qual o detalhe que queremos agregar a informação. De notar que isto terá impacto devido ao <em>overhead</em>, ou seja, maior detalhe implicará uma maior carga de trabalho. Varia em:</p>
+<ul>
+<li><em>input rate</em>: detalhe ao nível temporal (débito ao observar);</li>
+<li><em>resolution</em>: até que ponto a aplicação é capaz de representar no <em>input rate</em> que pretendemos (a representar).</li>
+</ul>
+</li>
+</ul>
+<h3 id="classificação-do-monitor"><a class="header" href="#classificação-do-monitor">Classificação do Monitor</a></h3>
+<ul>
+<li>
+<p><em>Event-Driven vs Sampling</em>: o que é que dará <em>trigger</em> para se iniciar a observação?</p>
+<ul>
+<li><em><strong>Event-Driven</strong></em>: monitoriza sempre que um evento ocorra;</li>
+<li><em><strong>Sampling</strong></em>: monitoriza de vez em quando, em intervalos aleatórios.</li>
+</ul>
+</li>
+<li>
+<p><em>On-line vs Batch</em>: quando é que a observação estará disponível?</p>
+<ul>
+<li><em><strong>On-line</strong></em>: disponibiliza a observação em tempo real;</li>
+<li><em><strong>Batch</strong></em>: disponibiliza a observação de vez em quando, em conjuntos de observações agregados.</li>
+</ul>
+</li>
+<li>
+<p><em>Hardware vs Software</em></p>
+<ul>
+<li><em><strong>Hardware</strong></em>: monitor é implementado em <em>hardware</em>.
+<ul>
+<li>Muito rápido;</li>
+<li>Muito preciso;</li>
+<li>Nada flexível, ou seja, não conseguimos alterar o que ele irá monitorizar ou outros parâmetros.</li>
+</ul>
+</li>
+<li><em><strong>Software</strong></em>:
+<ul>
+<li>Lento;</li>
+<li>Mais flexível, visto que somos nós que implementamos o que pretendemos.</li>
+</ul>
+</li>
+<li>Geralmente, utiliza-se o monitor por <em>software</em>.</li>
+</ul>
+</li>
+<li>
+<p><em>Centralized vs Distributed</em></p>
+</li>
+</ul>
+<h3 id="arquitetura-de-monitorização"><a class="header" href="#arquitetura-de-monitorização">Arquitetura de Monitorização</a></h3>
+<ul>
+<li>
+<p>Numa aplicação real, o mesmo componente poderá efetuar as funções de diversas camadas lógicas.</p>
+</li>
+<li>
+<p><strong>Camadas Lógicas</strong>:</p>
+<ul>
+<li><strong>Observação</strong>: observa os eventos o mais perto possível do local em que ocorrem;</li>
+<li><strong>Coleção</strong>: coleciona os dados da observação e normaliza-os;</li>
+<li><strong>Análise</strong>: aplica filtros, relaciona e sumariza os dados da coleção;</li>
+<li><strong>Apresentação</strong>: cria <em>dashboards</em> e outras interfaces de modo a representar os dados ao utilizador.</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/arquitetura_monitor.png" alt="image Arquitetura de Monitorização" /></p>
+<h4 id="observação"><a class="header" href="#observação">Observação</a></h4>
+<ul>
+<li>Observação passiva ou <em>spying</em> (p.e. <em>network sniffer</em>);</li>
+<li>Instrumentar:
+<ul>
+<li><em>counters</em> construídos em sistema;</li>
+<li>geração de <em>logs</em>.</li>
+</ul>
+</li>
+<li><em>Probing</em> com <em>requests</em> adcionais:
+<ul>
+<li><em>ping</em></li>
+</ul>
+</li>
+</ul>
+<h4 id="coleção"><a class="header" href="#coleção">Coleção</a></h4>
+<ul>
+<li><em>Push Data vs Pull Data</em>:
+<ul>
+<li><em><strong>Push Data</strong></em>: Está constantemente a colecionar dados;</li>
+<li><em><strong>Pull Data</strong></em>: De vez em quando pede para colecionar dados.</li>
+<li>A escolha do tipo de coleção é feita com base na configuração, nas APIs, nos sistemas de <em>legacy</em>, etc...</li>
+</ul>
+</li>
+<li>Resiliência e Persistência de Dados:
+<ul>
+<li>Por vezes, esta camada é responsável por guardar os dados normalizados para a análise ser feita sobre eles.</li>
+</ul>
+</li>
+<li>É preciso ter em atenção a sincronização de relógios quando este processo é feito em ambientes distribuídos.</li>
+</ul>
+<h4 id="análise"><a class="header" href="#análise">Análise</a></h4>
+<ul>
+<li>Tarefa de processamento de dados:
+<ul>
+<li><em>Time Series</em>;</li>
+<li><em>Searching</em>.</li>
+</ul>
+</li>
+<li>É muito importante que esteja bem implementada em ambientes de muito grande escala.
+<ul>
+<li>Em muitos casos, precisa mesmo de ser distribuída.</li>
+</ul>
+</li>
+</ul>
+<h4 id="apresentação"><a class="header" href="#apresentação">Apresentação</a></h4>
+<ul>
+<li>
+<p>Objetivos:</p>
+<ul>
+<li>Apresentação de métricas de <em>performance</em>;</li>
+<li>Deteção de erros;</li>
+<li>Dar <em>tracking</em> à configuração.</li>
+</ul>
+</li>
+<li>
+<p>Resultados:</p>
+<ul>
+<li>Geração de alertas;</li>
+<li>Representação gráfica.</li>
+</ul>
+</li>
+</ul>
+<h3 id="monitorização-e-gestão"><a class="header" href="#monitorização-e-gestão">Monitorização e Gestão</a></h3>
+<ul>
+<li><strong>Políticas</strong>:
+<ul>
+<li><strong>Exemplo</strong>: &quot;Se esta VM estiver a utilizar mais que 20% da CPU mata-a&quot;.</li>
+</ul>
+</li>
+<li><strong>Orquestrador</strong>:
+<ul>
+<li>Gere as políticas;</li>
+<li>Através das métricas verifica as políticas e manda atuar em conformidade.</li>
+</ul>
+</li>
+<li><strong>Atuação</strong>:
+<ul>
+<li>Faz o que o orquestrador lhe ordena.</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/monit_gest.png" alt="image Monitorização e Gestão" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter_8.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="chapter_10.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter_8.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="chapter_10.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

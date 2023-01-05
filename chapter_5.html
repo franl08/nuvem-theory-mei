@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html lang="pt" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Teórica 05 - Teóricas de ASCN</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Teórica 01</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Teórica 02</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> Teórica 03</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> Teórica 04</a></li><li class="chapter-item expanded "><a href="chapter_5.html" class="active"><strong aria-hidden="true">5.</strong> Teórica 05</a></li><li class="chapter-item expanded "><a href="chapter_6.html"><strong aria-hidden="true">6.</strong> Teórica 06</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">7.</strong> Teórica 07</a></li><li class="chapter-item expanded "><a href="chapter_8.html"><strong aria-hidden="true">8.</strong> Teórica 08</a></li><li class="chapter-item expanded "><a href="chapter_9.html"><strong aria-hidden="true">9.</strong> Teórica 09</a></li><li class="chapter-item expanded "><a href="chapter_10.html"><strong aria-hidden="true">10.</strong> Teórica 10</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Teóricas de ASCN</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="teórica-05"><a class="header" href="#teórica-05">Teórica 05</a></h1>
+<h2 id="virtualização"><a class="header" href="#virtualização">Virtualização</a></h2>
+<ul>
+<li>Técnica que permite criar algo virtual sobre um recurso;</li>
+<li>A ideia é criar uma abstração sobre um recurso qualquer (<em>software</em> ou <em>hardware</em>);</li>
+<li>Na <em>cloud</em>, falamos de virtualização a, praticamente, todos os níveis.</li>
+</ul>
+<p><strong>Exemplos</strong>:</p>
+<ul>
+<li>Redes Virtuais;</li>
+<li>Memória Virtual;</li>
+<li>Volumes de Armazenamento Lógicos.</li>
+</ul>
+<h3 id="vantagens"><a class="header" href="#vantagens">Vantagens</a></h3>
+<h4 id="heterogeniedade"><a class="header" href="#heterogeniedade">Heterogeniedade</a></h4>
+<ul>
+<li>Recursos virtuais podem ser providenciados sob diferentes recursos de <em>hardware</em>;</li>
+<li>Um recurso virtual poderá correr diferentes aplicações ou serviços utilizando o mesmo <em>hardware</em> (p.e. VMs a correrem em diferentes Sistemas Operativos).</li>
+</ul>
+<h4 id="transparência"><a class="header" href="#transparência">Transparência</a></h4>
+<ul>
+<li>A interação com uma VM, pela parte do utilizador, é semelhante à interação com uma máquina física.</li>
+</ul>
+<h4 id="isolamento"><a class="header" href="#isolamento">Isolamento</a></h4>
+<ul>
+<li>Os recursos virtuais são isolados uns dos outros em termos de:
+<ul>
+<li>Segurança;
+<ul>
+<li>Um cliente não sabe onde é que a máquina virtual se encontra a correr, nem que outras máquinas virtuais se encontram a correr naquele servidor.</li>
+</ul>
+</li>
+<li>Desempenho;
+<ul>
+<li>Depende do componente em questão.</li>
+</ul>
+</li>
+<li>Falhas (incluido sistemas operativos ou dados corrompidos).
+<ul>
+<li>A falha de 1 VM não afeta as restantes.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="otimização-de-recursos"><a class="header" href="#otimização-de-recursos">Otimização de Recursos</a></h4>
+<ul>
+<li>Os recursos físicos podem ser otimizados de forma a serem utilizados por diversos clientes.
+<ul>
+<li>Consolidação do Servidor;</li>
+<li>Menos Custos.</li>
+</ul>
+</li>
+</ul>
+<h4 id="gestão--fácil"><a class="header" href="#gestão--fácil">Gestão + Fácil</a></h4>
+<ul>
+<li>A gestão de recursos virtuais é mais simples do que a gestão de recursos físicos.
+<ul>
+<li>Por exemplo, a migração e <em>backups</em> de VMs é muito mais fácil.</li>
+</ul>
+</li>
+</ul>
+<h3 id="desvantagens"><a class="header" href="#desvantagens">Desvantagens</a></h3>
+<h4 id="desempenho"><a class="header" href="#desempenho">Desempenho</a></h4>
+<ul>
+<li>Geralmente, a virtualização de recursos traz uma <em>penalty</em> de desempenho associada.
+<ul>
+<li>Devido à &quot;tradução&quot; de pedidos lógicos para pedidos físicos.</li>
+</ul>
+</li>
+</ul>
+<h4 id="overprovisioning"><a class="header" href="#overprovisioning"><em>Overprovisioning</em></a></h4>
+<ul>
+<li>Dar <em>deploy</em> a mais recursos virtuais do que os disponíveis fisicamente pode gerar degradação de desempenho.</li>
+</ul>
+<h4 id="segurança"><a class="header" href="#segurança">Segurança</a></h4>
+<ul>
+<li>O isolamento pode não ser bem feito (p.e. mal endereçado);
+<ul>
+<li>Existem alguns <em>bugs</em> conhecidos nos <em>hypervisors</em>;</li>
+</ul>
+</li>
+<li>Não oferece segurança contra quem acede diretamente ao servidor;
+<ul>
+<li>Num sistema tradicional, um atacante teria acesso a apenas 1 serviço, no entanto, neste tipo de sistemas, um atacante terá acesso a uma grande quantidade de serviços.</li>
+</ul>
+</li>
+</ul>
+<h4 id="resiliência"><a class="header" href="#resiliência">Resiliência</a></h4>
+<ul>
+<li>Se um servidor falhar, múltiplos serviços irão falhar.</li>
+</ul>
+<h3 id="máquinas-virtuais"><a class="header" href="#máquinas-virtuais">Máquinas Virtuais</a></h3>
+<h4 id="porque-é-que-surgiram"><a class="header" href="#porque-é-que-surgiram">Porque é que surgiram?</a></h4>
+<ul>
+<li>Para permitir correr diferentes Sistemas Operativos em simultâneo no mesmo servidor físico;</li>
+<li>Trocar uma aplicação/serviço para que este corra num Sistema Operativo diferente é uma tarefa difícil e custosa.</li>
+</ul>
+<h4 id="arquitetura"><a class="header" href="#arquitetura">Arquitetura</a></h4>
+<ul>
+<li>As instruções do <em>Guest OS</em> (isto é, da VM) são intercetadas, traduzidas e executadas no <em>hardware</em> físico.</li>
+</ul>
+<p><img src="images/arquitetura_vms.png" alt="image Arquitetura VMs" /></p>
+<h5 id="hypervisor"><a class="header" href="#hypervisor"><em>Hypervisor</em></a></h5>
+<ul>
+<li>Também conhecido por VMM (<em>Virtual Machine Monitor</em>);</li>
+<li>Controla a interação <em>low-level</em> entre as VMs e o sistema em que estas estão a correr;</li>
+<li>Providencia acesso à CPU, RAM, disco e recursos de <em>hardware</em> de rede do <em>host</em>.</li>
+</ul>
+<h5 id="cpu-do-host"><a class="header" href="#cpu-do-host">CPU do <em>Host</em></a></h5>
+<ul>
+<li><em>Time Slicing</em> - o processamento de pedidos são divididos e partilhados ao longo das VMs;
+<ul>
+<li>Se tivermos vários <em>cores</em> \( \rightarrow \) utilização de 1 <em>core</em> por VM e evita-se este processo.</li>
+</ul>
+</li>
+<li>Semelhante a correr múltiplos processos no <em>host</em>;</li>
+<li>Dar <em>commitment</em> a demasiados <em>vCPUs</em> pode gerar a pior desempenho.</li>
+</ul>
+<h5 id="ram-e-armazenamento-persistente-do-host"><a class="header" href="#ram-e-armazenamento-persistente-do-host">RAM e Armazenamento Persistente do Host</a></h5>
+<ul>
+<li>Cada VM tem 1 parte de RAM e 1 parte de disco do <em>host</em> associada;</li>
+<li>Não deverá interferir com a parte dos outros (tanto entre VMs, como com o <em>host</em>);
+<ul>
+<li>De forma a manter o isolamento entre recursos;</li>
+<li>O <em>hypervisor</em> está responsável por não deixar o <em>host</em> interferir com a parte da VM.</li>
+</ul>
+</li>
+<li>Armazenamento partilhado entre VMs poderá controlar múltiplos escritores/leitores eficientemente;</li>
+<li>Recursos de Armazenamento podem ser alocados conforme pedido (isto é, <em>thin-provisioning</em>).</li>
+</ul>
+<h5 id="rede-do-host"><a class="header" href="#rede-do-host">Rede do <em>Host</em></a></h5>
+<ul>
+<li>As VMs partilham a largura de banda e podem ser configuradas com diferentes <em>setups</em> de rede:
+<ul>
+<li><em><strong>Host-only</strong></em>: Partilha a rede do <em>host</em> e só tem acesso ao <em>host</em>;</li>
+<li><em><strong>NAT</strong></em>: Traduz o IP da VM para o IP do <em>host</em> e comunica com a rede exterior utilizando o IP do <em>host</em>. A comunicação da rede com a VM pode ser feita através de um protocolo de <em>forwarding</em> entre portas de rede;</li>
+<li><em><strong>Bridge</strong></em>: Utiliza o <em>hypervisor</em> para obter um IP próprio para a VM. A VM é vista, na rede, como um nó de rede físico.</li>
+</ul>
+</li>
+</ul>
+<h3 id="modos-de-virtualização"><a class="header" href="#modos-de-virtualização">Modos de Virtualização</a></h3>
+<h4 id="full-virtualization"><a class="header" href="#full-virtualization"><em>Full Virtualization</em></a></h4>
+<ul>
+<li>O <em>Guest OS</em> é tratado de uma forma completamente abstrata ao <em>hardware</em> do <em>host</em> em que está a correr (p.e. <em>VirtualBox</em>);</li>
+<li><strong>Vantagem</strong>: Não efetuar modificações para o <em>Guest OS</em> funcionar indica que existe uma maior quantidade de Sistemas Operativos suportados e uma maior facilidade de migração e portabilidade de VMs;</li>
+<li><strong>Desvantagem</strong>: Todas as instruções da VM têm de ser traduzidas no <em>hypervisor</em> o que poderá provocar uma queda de desempenho.
+<ul>
+<li>O <em>hardware</em> tem evoluído para combater isto. 
+<ul>
+<li>A introdução de <em>Hardware-Assisted Virtualization</em> (p.e. Intel VT-x, AMD-V) traz <em>hardware</em> específico para combater a <em>penalty</em> por tradução de instrução.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="paravirtualization"><a class="header" href="#paravirtualization"><em>Paravirtualization</em></a></h4>
+<ul>
+<li>Requere gatilhos/modificações ao Sistema Operativo da VM de forma a dar <em>bypass</em> às traduções de instruções custosas (p.e. <em>Xen</em>);</li>
+<li><strong>Vantagem</strong>: Melhor <em>performance</em>, visto que não existe a tradução de instruções;</li>
+<li><strong>Desvantangem</strong>: O Sistema Operativo do <em>Guest</em> tem de ser modificado, o que é pior para manutenção e portabilidade.</li>
+</ul>
+<h3 id="tipos-de-virtualização"><a class="header" href="#tipos-de-virtualização">Tipos de Virtualização</a></h3>
+<h4 id="tipo-1---bare-metal-hypervisor"><a class="header" href="#tipo-1---bare-metal-hypervisor">Tipo 1 - <em>Bare Metal Hypervisor</em></a></h4>
+<ul>
+<li>O <em>Hypervisor</em> não precisa de Sistema Operativo de propósito geral no servidor de <em>host</em> (p.e. <em>VMWare ESX</em>);</li>
+<li>O <em>Hypervisor</em> é <em>deployed</em> diretamente no <em>harware</em> como se fosse um Sistema Operativo de pequena dimensão;</li>
+<li>Tem uma melhor <em>performance</em>, mas precisa de um suporte à virtualização específico no <em>hardware</em>, ou seja, é preciso <em>hardware</em> específico para correr isto.</li>
+</ul>
+<h4 id="tipo-2---hosted-hypervisor"><a class="header" href="#tipo-2---hosted-hypervisor">Tipo 2 - <em>Hosted Hypervisor</em></a></h4>
+<ul>
+<li>O <em>Hypervisor</em> é lançado num Sistema Operativo &quot;normal&quot; (p.e. <em>VirtualBox</em>);</li>
+<li>Tem um pior desempenho, visto que o Sistema Operativo não é otimizado para virtualização;</li>
+</ul>
+<p><strong>Nota</strong></p>
+<ul>
+<li>O <em>KVM</em> e o <em>Xen</em> apresentam uma solução híbrida dos 2 tipos apresentados.
+<ul>
+<li>Os seus <em>hypervisors</em> precisam da instalação de módulos de <em>kernel</em> específicos em Sistemas Operativos &quot;normais&quot;.</li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter_4.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="chapter_6.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter_4.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="chapter_6.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

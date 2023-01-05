@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<html lang="pt" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Teórica 02 - Teóricas de ASCN</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Teórica 01</a></li><li class="chapter-item expanded "><a href="chapter_2.html" class="active"><strong aria-hidden="true">2.</strong> Teórica 02</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> Teórica 03</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> Teórica 04</a></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">5.</strong> Teórica 05</a></li><li class="chapter-item expanded "><a href="chapter_6.html"><strong aria-hidden="true">6.</strong> Teórica 06</a></li><li class="chapter-item expanded "><a href="chapter_7.html"><strong aria-hidden="true">7.</strong> Teórica 07</a></li><li class="chapter-item expanded "><a href="chapter_8.html"><strong aria-hidden="true">8.</strong> Teórica 08</a></li><li class="chapter-item expanded "><a href="chapter_9.html"><strong aria-hidden="true">9.</strong> Teórica 09</a></li><li class="chapter-item expanded "><a href="chapter_10.html"><strong aria-hidden="true">10.</strong> Teórica 10</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Teóricas de ASCN</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="teórica-02"><a class="header" href="#teórica-02">Teórica 02</a></h1>
+<h2 id="aplicações-distribuídas"><a class="header" href="#aplicações-distribuídas">Aplicações Distribuídas</a></h2>
+<h3 id="porquê-usá-las"><a class="header" href="#porquê-usá-las">Porquê usá-las?</a></h3>
+<ul>
+<li>Modularidade;</li>
+<li>Desempenho;</li>
+<li>Disponibilidade/Resiliência.</li>
+</ul>
+<h3 id="sistemas-monolíticos"><a class="header" href="#sistemas-monolíticos">Sistemas Monolíticos</a></h3>
+<p>Múltiplos serviços para múltiplos alvos, mas tudo a correr numa única máquina... Ou seja, tipos de sistemas não distribuídos.</p>
+<p><strong>Desvantagens:</strong></p>
+<ul>
+<li>Ponto de falha único;</li>
+<li>Carga não é distribuída, o que provoca um ponto de contenção;</li>
+<li>Os serviços não são isolados.</li>
+</ul>
+<p>Tipicamente, queremos ter estas 3 garantias nos nossos serviços:</p>
+<h4 id="replicação"><a class="header" href="#replicação">Replicação</a></h4>
+<ul>
+<li>Múltiplas cópias dos mesmos dados e funcionalidades;</li>
+<li>Providencia resiliência e, no caso de permitir que um cliente se conecte a outro servidor, poder de escala.</li>
+</ul>
+<h4 id="particionamento"><a class="header" href="#particionamento">Particionamento</a></h4>
+<p>No caso de particionar apenas os dados, podemos dar-lhe o nome de <em>sharding</em>.</p>
+<ul>
+<li>O servidor é divido horizontalmente (<em>sharding</em>);</li>
+<li>Oferece poder de escalabilidade;</li>
+<li>Pode ser aplicado a computação, dados, etc...</li>
+</ul>
+<h4 id="arquitetura-orientada-aos-serviços-soa"><a class="header" href="#arquitetura-orientada-aos-serviços-soa">Arquitetura Orientada aos Serviços (SOA)</a></h4>
+<p>Cada componente da aplicação deve correr num servidor diferente.</p>
+<ul>
+<li>Divide o servidor de forma vertical;</li>
+<li>Providencia escalabilidade e modularidade;</li>
+<li>Isto pode causar problemas na decomposição de serviços:
+<ul>
+<li><em>Quão micro deve ser?</em>;</li>
+</ul>
+</li>
+<li>Tem um <em>deploy</em> complexo.</li>
+</ul>
+<h4 id="nota"><a class="header" href="#nota">Nota:</a></h4>
+<ul>
+<li><strong>Escala Vertical</strong>: Para escalar, podemos aumentar os recursos do <em>server</em>;</li>
+<li><strong>Escala Horizontal</strong>: Para escalar, podemos aumentar o número de servidores.</li>
+</ul>
+<h3 id="arquiteturas-distribuídas"><a class="header" href="#arquiteturas-distribuídas">Arquiteturas Distribuídas</a></h3>
+<p>Veja-se uns exemplos de arquiteturas distribuídas:</p>
+<ul>
+<li><em>Client-server</em>;</li>
+<li>Servidor <em>proxy</em>;</li>
+<li><em>Master-server</em>;</li>
+<li><em>Server group</em>;</li>
+<li><em>Multi-tier</em>;</li>
+<li><em>Bus</em>.</li>
+</ul>
+<h4 id="client-server"><a class="header" href="#client-server"><em>Client-server</em></a></h4>
+<ul>
+<li>As funcionalidades e os dados encontram-se no servidor;</li>
+<li>O cliente tem uma interface e fala com o servidor através de um protocolo num <em>stub</em>;
+<ul>
+<li>Um <em>stub</em> é um pacote de <em>middleware</em> presente no lado do cliente.</li>
+</ul>
+</li>
+<li><strong>Desvantagens</strong>:
+<ul>
+<li>Ponto único de falha;</li>
+<li>Gargalo na escalabilidade.</li>
+</ul>
+</li>
+</ul>
+<h4 id="proxy-server"><a class="header" href="#proxy-server"><em>Proxy Server</em></a></h4>
+<ul>
+<li>Adiciona-se um <em>proxy</em> entre o cliente e múltiplos <em>servers</em>;</li>
+<li>Do lado do cliente é como se existisse um único servidor que é o <em>proxy</em>;</li>
+<li><strong>Vantagens</strong>:
+<ul>
+<li>Permite o balanceamento do trabalho (maior escala e maior disponibilidade);</li>
+</ul>
+</li>
+<li><strong>Desvantagens</strong>:
+<ul>
+<li>Ponto único de falha;
+<ul>
+<li>Não possui qualquer estado e tem um trabalho mais leve, o que provoca uma menor probabilidade de falha.</li>
+</ul>
+</li>
+<li>Tem um número máximo de conexões simultâneas.</li>
+</ul>
+</li>
+</ul>
+<h4 id="master-server"><a class="header" href="#master-server"><em>Master Server</em></a></h4>
+<p>Também conhecido por <em>Master-Slave</em>.</p>
+<ul>
+<li>Cliente entra em contacto com o <em>master</em> para saber onde se encontra o recurso pretendido;</li>
+<li>Após saber onde é que o recurso pretendido se encontra, entra em contacto diretamente com o servidor.</li>
+<li><strong>Vantagens</strong>:
+<ul>
+<li>Menos informação no ponto único de falha.</li>
+</ul>
+</li>
+<li><strong>Desvantagens</strong>:
+<ul>
+<li>Ponto único de falha.</li>
+</ul>
+</li>
+</ul>
+<h4 id="server-group"><a class="header" href="#server-group"><em>Server Group</em></a></h4>
+<ul>
+<li>Todos os <em>servers</em> podem responder a pedidos;</li>
+<li>Tem uma coordenação difícil;</li>
+<li><strong>Vantagens</strong>:
+<ul>
+<li>Muito resiliente.</li>
+</ul>
+</li>
+<li><strong>Desvantagens</strong>:
+<ul>
+<li>Muito pesado (o que provoca um baixo número de clientes) devido à lógica de balanceamento.</li>
+</ul>
+</li>
+</ul>
+<h4 id="bus"><a class="header" href="#bus"><em>Bus</em></a></h4>
+<ul>
+<li>Lógica de barramento;</li>
+<li>Participantes produzem e consomem informação para o <em>bus</em>;</li>
+<li>Um nó pode ser servidor <strong>e</strong> cliente;</li>
+<li>Os participantes devem ter um protocolo comum entre si;</li>
+<li><strong>Vantagens</strong>:
+<ul>
+<li>Altamente flexível.</li>
+</ul>
+</li>
+</ul>
+<h4 id="multi-tier"><a class="header" href="#multi-tier"><em>Multi-tier</em></a></h4>
+<ul>
+<li>Cada servidor atua como um cliente do nível inferior (ao estilo do modelo OSI);</li>
+<li>Permite o <em>deploy</em> independente e o escalonamento de diferentes funcionalidades;</li>
+<li>Cada camada tem um <em>stub</em> e protocolo para comunicar com a camada inferior;</li>
+<li><strong>Vantagens</strong>:
+<ul>
+<li>Grande modularidade.</li>
+</ul>
+</li>
+<li><strong>Desvantagens</strong>:
+<ul>
+<li>Muitos pontos únicos de falha.</li>
+</ul>
+</li>
+</ul>
+<p><strong>ATENÇÃO</strong>:</p>
+<p>De forma a termos a melhor solução possível, podemos combinar diversas arquiteturas.</p>
+<h4 id="estados-em-multi-tier"><a class="header" href="#estados-em-multi-tier">Estados em <em>multi-tier</em></a></h4>
+<ul>
+<li>Não há estados nas camadas superiores (p.e. <em>web server</em>);</li>
+<li>Estados transientes/em cache nas camadas do meio;</li>
+<li>Estados persistentes nas últimas camadas.
+<ul>
+<li><strong>Quanto mais para baixo se vai na pilha, mais complexa fica a replicação.</strong></li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="chapter_1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="chapter_3.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="chapter_1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="chapter_3.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
