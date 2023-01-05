@@ -4,9 +4,9 @@
 
 ### Aprovisionamento
 
-Ação de providenciar oferecer algo para uso.
+Ação de providenciar, oferecer algo para uso.
 
-Trata-se da configuração de servidores e recrusos. Prepara o sistema para a fase de *deployment*.
+Trata-se da configuração de servidores e recursos. Prepara o sistema para a fase de *deployment*.
 
 Exemplos de ações:
 
@@ -57,7 +57,7 @@ Define automação de tarefas via um conjunto de diretivas expressas numa dada l
 
 Existem diversas ferramentas para ajudar neste processo:
 
-![image Ferramentas](images/tools_recipe.png)
+![image Ferramentas](images/tools_recipes.png)
 
 Nesta UC iremos utilizar ***Ansible***.
 
@@ -91,8 +91,8 @@ O *workflow* passa a ser da seguinte forma:
 
 - Execução de receitas via *SSH* ou localmente sem a necessidade de agentes;
 - Receitas são expressas em ficheiros *YAML*;
-- Recektas criadas através de módulos e diretivas de *tasks*;
-- Recitas organizadas em *roles* e *playbooks*;
+- Receitas criadas através de módulos e diretivas de *tasks*;
+- Receitas organizadas em *roles* e *playbooks*;
 - *Hosts* alvo são definidos no inventário;
 - Idempotência.
   - Tarefas só correm no caso do alvo diferir daquilo que é expectável que aconteça depois de correr.

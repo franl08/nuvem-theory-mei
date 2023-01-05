@@ -11,7 +11,7 @@
 #### Arquivo
 
 - Cópias de coisas que tinha e que pretendo guardar;
-- Precisam de ser muito rápido em termos de débito (a latência é praticamente irrelevante);
+- Precisam de ser muito rápidos em termos de débito (a latência é praticamente irrelevante);
 - Padrão Sequencial;
   - Padrões aleatórios causam lentidão.
 - Geralmente, só se irão escrever estes dados uma única vez.
@@ -106,7 +106,7 @@ O armazenamento primário pode ser constituído não apenas pela RAM, como tamb�
   - Milhares a milhões de nodos.
 - Grande *churn*;
   - Nodos falham e são substituídos com frequência.
-- Não há um pono único de falha.
+- Não há um ponto único de falha.
   - Dados e metadados distribuídos (replicados) entre nodos;
   - Diferentes nodos podem interagir com a aplicação do utilizador.
 - Exemplos: *Napster*, *Gnutella*, *CFS*, *Farsite*, *DataFlasks*.

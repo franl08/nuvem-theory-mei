@@ -56,7 +56,7 @@
 
 ### *Swift*
 
-- Grande disponibilidade, distribuídos, armazenamento de objetos/*blobs* eventualmente consistente;
+- Grande disponibilidade, distribuídos, armazenamento de objetos/*blobs* eventualmente consistentes;
 - Ideal para guardar dados não estruturados que podem crescer sem fronteiras.
 
 ### *Neutron*
@@ -106,7 +106,7 @@
   - Permite o *deploy* "fácil" de aplicações *legacy*.
 - **PaaS**
   - Foca-se no desenvolvimento da aplicação em si e nos seus requisitos;
-  - Desenvolvimento, *deployment*; *debugging* e ferramentas de *benchmarking* *powerful* já no seu local.
+  - Desenvolvimento, *deployment*, *debugging* e ferramentas de *benchmarking* *powerful* já no seu local.
 - **SaaS**
   - Aproveita componentes existentes (bases de dados, servidores de aplicação e servidores *web*).
 

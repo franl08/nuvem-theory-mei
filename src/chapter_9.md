@@ -100,7 +100,7 @@
   - **Exemplo**: "Se esta VM estiver a utilizar mais que 20% da CPU mata-a".
 - **Orquestrador**:
   - Gere as políticas;
-  - Através das métricas verifica as política e manda atuar em conformidade.
+  - Através das métricas verifica as políticas e manda atuar em conformidade.
 - **Atuação**:
   - Faz o que o orquestrador lhe ordena.
 

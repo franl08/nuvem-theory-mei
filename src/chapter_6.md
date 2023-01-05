@@ -13,7 +13,7 @@
   - A instalação é feita uma única vez.
 
 #### *Linux Containers*
-- São **muito leves** e não precisam da virtualização de recuros;
+- São **muito leves** e não precisam da virtualização de recursos;
 - A *engine* isola e configura os recursos;
 - O sistema do *host* é compartimentado para cada *container* em termos de CPU e I/O;
 - Existe uma noção de isolamento entre *containers*.
@@ -95,8 +95,8 @@
 
 ##### Rede
 
-- Cada *pod* tem um único endereço de IP único no *cluster*;
-  - As conexões entre *pods* (mesmo em nodo *worker* diferentes) pode ser gerida através de *overlays* de redes.
+- Cada *pod* tem um endereço de IP único no *cluster*;
+  - As conexões entre *pods* (mesmo em nodo *worker* diferentes) pode ser gerida através dos *overlays* de redes.
 
 ##### Armazenamento
 
@@ -113,7 +113,7 @@
 #### Vantagens dos *Containers*
 
 - Mais rápidos;
-- Melor utilização de recursos;
+- Melhor utilização de recursos;
 - Podem ser lançadas em servidores virtualizados ou físicos.
 
 #### Desvantagens dos *Containers*

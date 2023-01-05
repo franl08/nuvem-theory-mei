@@ -108,7 +108,7 @@
 - Ter uma abordagem não sistemática;
   - Devemos ter *scripts* de tudo, correr sempre tudo no mesmo ambiente, correr múltiplas vezes os mesmos testes, etc...
 - Cargas de trabalho não representativas da utilização real da aplicação;
-- Fazer uma análise a apresentação de resultados incorreta.
+- Fazer uma análise à apresentação de resultados incorreta.
 
 ### Conclusões
 

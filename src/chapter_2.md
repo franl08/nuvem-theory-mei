@@ -76,7 +76,7 @@ Veja-se uns exemplos de arquiteturas distribuídas:
   - Permite o balanceamento do trabalho (maior escala e maior disponibilidade);
 - **Desvantagens**:
   - Ponto único de falha;
-    - Não possui qualquer estado e tem um trabalho mais levve, o que provoca uma menor probabilidade de falha.
+    - Não possui qualquer estado e tem um trabalho mais leve, o que provoca uma menor probabilidade de falha.
   - Tem um número máximo de conexões simultâneas.
 
 #### *Master Server*
